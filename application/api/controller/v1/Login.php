@@ -52,4 +52,19 @@ class Login extends BaseController{
         }
     }
 
+    public function forgetPassword(SmsService $smsService){
+        $param    = $this->checkParam('phone,verify_code,new_password');
+        $phone    = $param['phone'];
+        $code     = $param['verify_code'];
+        $newpwd   = $param['new_password'];
+        if(!$smsService->checkCode($code,$phone)){
+            abort(400,'验证码错误');
+        }else{
+            $member = new Member();
+            $member->where('phone',$phone)->update(['password'=>Hash::make($newpwd)]);
+            return json(['code'=>200,'msg'=>'重置密码成功']);
+        }
+    }
+
+
 }
