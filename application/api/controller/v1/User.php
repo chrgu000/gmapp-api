@@ -25,6 +25,8 @@ class User extends BaseController{
         $ret      = (new SmsService())->checkCode($sms_code,$phone);
         if(!$ret) abort(400,'短信验证码错误');
 
+        //检查头像
+
 
         //创建用户
         $member->register($param);

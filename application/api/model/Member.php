@@ -20,6 +20,8 @@ class Member extends Model{
             'create_at'     => NOW_TIME,
             'update_at'     => NOW_TIME,
             'login_ip'      => Request::instance()->ip(),
+            'channel'       => $user['channel'],
+            'avatar'        => $user['avatar'],
         ]);
 
     }

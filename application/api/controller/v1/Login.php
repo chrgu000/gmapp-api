@@ -22,6 +22,7 @@ class Login extends BaseController{
         $member   = new Member();
         $m        = $member->where('phone',$phone)->find();
         if(Hash::check($password,$m['password'])){
+            
             return json(['code'=>200,'msg'=>'登陆成功','data'=>$m ]);
         }else{
             abort(400 , '手机号密码错误');
