@@ -26,8 +26,7 @@
         "topthink/think-image": "1.*",
         "lcobucci/jwt": "^3.2",
         "qiniu/php-sdk": "^7.1",
-        "riverslei/payment": "~4.0.0",
-        "mrgoon/aliyun-sms": "dev-master"
+        "riverslei/payment": "~4.0.0"
 
 
 
